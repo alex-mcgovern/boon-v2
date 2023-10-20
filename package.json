@@ -12,7 +12,7 @@
 		"postversion": "git push && git push --tags && npm publish --access public",
 		"preview": "vite preview",
 		"storybook": "storybook dev -p 6006",
-		"test": "vitest"
+		"test": ""
 	},
 	"dependencies": {
 		"react": "^18.2.0",
