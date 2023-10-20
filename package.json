@@ -2,9 +2,10 @@
 	"name": "boon-v2",
 	"version": "0.0.0-13",
 	"type": "module",
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
+	"exports": {
+		".": "./dist/"
+	},
 	"scripts": {
 		"build": "vite build",
 		"build-storybook": "storybook build",
@@ -34,6 +35,8 @@
 		"@vitejs/plugin-react-swc": "^3.3.2",
 		"prop-types": "^15.8.1",
 		"storybook": "^7.5.1",
+		"typescript": "^5.2.2",
+		"typescript-plugin-css-modules": "^5.0.2",
 		"vite": "^4.4.5"
 	}
 }

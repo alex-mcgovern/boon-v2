@@ -48,18 +48,18 @@
     }
 
     /* Slots */
-    &__slot {
+    &.slot {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-right: 0.5rem;
 
-        &.left {
+        &.slotLeft {
             margin-right: 0;
             margin-left: -0.5rem;
         }
 
-        &.right {
+        &.slotRight {
             margin-left: 0;
             margin-right: -0.5rem;
         }

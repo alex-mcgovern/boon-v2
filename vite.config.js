@@ -8,8 +8,8 @@ export default defineConfig({
 		minify: false,
 		lib: {
 			entry: [
-				path.resolve(__dirname, "components/button/index.js"),
-				path.resolve(__dirname, "components/input/index.js"),
+				path.resolve(__dirname, "components/button/index.ts"),
+				path.resolve(__dirname, "components/input/index.ts"),
 			],
 			name: "boon-v2",
 			formats: ["es"],
