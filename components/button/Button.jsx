@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import styles from "./Button.module.css";
 
 /**
@@ -53,10 +53,10 @@ export function Button(props) {
 	);
 }
 
-Button.propTypes = {
-	slotLeft: PropTypes.node,
-	slotRight: PropTypes.node,
-	variant: PropTypes.oneOf(["primary", "secondary", "tertiary"]),
-	size: PropTypes.oneOf(["small", "medium", "large"]),
-	...Button.propTypes,
-};
+// Button.propTypes = {
+// 	slotLeft: PropTypes.node,
+// 	slotRight: PropTypes.node,
+// 	variant: PropTypes.oneOf(["primary", "secondary", "tertiary"]),
+// 	size: PropTypes.oneOf(["small", "medium", "large"]),
+// 	...Button.propTypes,
+// };
