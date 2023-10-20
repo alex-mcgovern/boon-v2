@@ -24,5 +24,9 @@ export function Button(props) {
 		...rest
 	} = props;
 
-	return <button type="button">{children}</button>;
+	return (
+		<button id="wahoo" type="button">
+			{children}
+		</button>
+	);
 }
