@@ -1,8 +1,10 @@
 {
 	"name": "boon-v2",
-	"version": "0.0.0-13",
+	"version": "0.0.0-14",
 	"type": "module",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"exports": {
 		".": "./dist/"
 	},
