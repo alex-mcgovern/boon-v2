@@ -43,13 +43,7 @@ export function Button(props) {
 	//     size && styles[`${size}SlotRight`],
 	// ].join(' ');
 
-	return (
-		<button type="button" className={cn} {...rest}>
-			{/* {slotLeft && <div className={slotLeftClasses}>{slotLeft}</div>} */}
-			{children}
-			{/* {slotRight && <div className={slotRightClasses}>{slotRight}</div>} */}
-		</button>
-	);
+	return <button type="button">{children}</button>;
 }
 
 // Button.propTypes = {
