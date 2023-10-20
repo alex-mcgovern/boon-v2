@@ -25,11 +25,11 @@ export function Button(props) {
 		...rest
 	} = props;
 
-	const cn = [
-		styles.btn,
-		variant && styles[variant],
-		size && styles[size],
-	].join(" ");
+	// const cn = [
+	// 	styles.btn,
+	// 	variant && styles[variant],
+	// 	size && styles[size],
+	// ].join(" ");
 
 	// const slotLeftClasses = [
 	//     styles.slotLeft,
