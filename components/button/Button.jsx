@@ -32,31 +32,31 @@ export function Button(props) {
 		size && styles[size],
 	].join(" ");
 
-	// const slotLeftClasses = [
-	//     styles.slotLeft,
-	//     variant && styles[`${variant}SlotLeft`],
-	//     size && styles[`${size}SlotLeft`],
-	// ].join(' ');
+	const slotLeftClasses = [
+		styles.slotLeft,
+		variant && styles[`${variant}SlotLeft`],
+		size && styles[`${size}SlotLeft`],
+	].join(" ");
 
-	// const slotRightClasses = [
-	//     styles.slotRight,
-	//     variant && styles[`${variant}SlotRight`],
-	//     size && styles[`${size}SlotRight`],
-	// ].join(' ');
+	const slotRightClasses = [
+		styles.slotRight,
+		variant && styles[`${variant}SlotRight`],
+		size && styles[`${size}SlotRight`],
+	].join(" ");
 
 	return (
 		<button type={type} className={cn} {...rest}>
-			{/* {slotLeft && <div className={slotLeftClasses}>{slotLeft}</div>} */}
+			{slotLeft && <div className={slotLeftClasses}>{slotLeft}</div>}
 			{children}
-			{/* {slotRight && <div className={slotRightClasses}>{slotRight}</div>} */}
+			{slotRight && <div className={slotRightClasses}>{slotRight}</div>}
 		</button>
 	);
 }
 
-// Button.propTypes = {
-//     slotLeft: PropTypes.node,
-//     slotRight: PropTypes.node,
-//     variant: PropTypes.oneOf(['primary', 'secondary', 'tertiary']),
-//     size: PropTypes.oneOf(['small', 'medium', 'large']),
-//     ...Button.propTypes,
-// };
+Button.propTypes = {
+	slotLeft: PropTypes.node,
+	slotRight: PropTypes.node,
+	variant: PropTypes.oneOf(["primary", "secondary", "tertiary"]),
+	size: PropTypes.oneOf(["small", "medium", "large"]),
+	...Button.propTypes,
+};
