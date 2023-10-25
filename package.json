@@ -2,10 +2,10 @@
 	"name": "boon-v2",
 	"version": "0.0.0-20",
 	"type": "module",
-	"files": [
-		"components"
-	],
+	"module": "components/index.js",
+	"files": ["components"],
 	"exports": {
+		"./style.css": "./components/style.css",
 		"./*": "./components/*"
 	},
 	"scripts": {
