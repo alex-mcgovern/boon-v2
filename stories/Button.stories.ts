@@ -1,4 +1,4 @@
-import { Button } from "../components/button";
+import { Button } from "../src/button";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -32,6 +32,12 @@ export const Secondary = {
 		children: "Button",
 	},
 };
+export const Ghost = {
+	args: {
+		variant: "ghost",
+		children: "Button",
+	},
+};
 
 /** -----------------------------------------------------------------------------
  * COLOR OVERLAY
@@ -39,27 +45,27 @@ export const Secondary = {
 
 export const ColorOverlayRed = {
 	args: {
-		colorOverlay: "red",
+		theme: "red",
 	},
 };
 export const ColorOverlayBlue = {
 	args: {
-		colorOverlay: "blue",
+		theme: "blue",
 	},
 };
 export const ColorOverlayGreen = {
 	args: {
-		colorOverlay: "green",
+		theme: "green",
 	},
 };
 export const ColorOverlayGrey = {
 	args: {
-		colorOverlay: "grey",
+		theme: "grey",
 	},
 };
 export const ColorOverlayAmber = {
 	args: {
-		colorOverlay: "amber",
+		theme: "amber",
 	},
 };
 
@@ -69,13 +75,19 @@ export const ColorOverlayAmber = {
 
 export const Small = {
 	args: {
-		size: "small",
+		size: "sm",
 		children: "Button",
 	},
 };
 export const Large = {
 	args: {
-		size: "large",
+		size: "lg",
 		children: "Button",
+	},
+};
+export const Square = {
+	args: {
+		size: "square",
+		children: "⌘",
 	},
 };
