@@ -25,7 +25,7 @@
 @keyframes slideUpKeyframes {
     0% {
         opacity: 0;
-        transform: translateY(var(--spacing-space_10));
+        transform: translateY(var(--space_10));
     }
 
     100% {
@@ -143,18 +143,18 @@
     --lineHeight-root: 1.5rem;
     --spacing-auto: auto;
     --spacing-none: 0;
-    --spacing-space_0: 0;
-    --spacing-space_0\.25: 0.0625rem;
-    --spacing-space_0\.5: 0.125rem;
-    --spacing-space_1: 0.25rem;
-    --spacing-space_2: 0.5rem;
-    --spacing-space_3: 0.75rem;
-    --spacing-space_4: 1rem;
-    --spacing-space_5: 1.25rem;
-    --spacing-space_6: 1.5rem;
-    --spacing-space_8: 2rem;
-    --spacing-space_10: 2.5rem;
-    --spacing-space_12: 3rem;
+    --space_0: 0;
+    --space_0\.25: 0.0625rem;
+    --space_0\.5: 0.125rem;
+    --space_1: 0.25rem;
+    --space_2: 0.5rem;
+    --space_3: 0.75rem;
+    --space_4: 1rem;
+    --space_5: 1.25rem;
+    --space_6: 1.5rem;
+    --space_8: 2rem;
+    --space_10: 2.5rem;
+    --space_12: 3rem;
     --duration-long: 600ms;
     --duration-medium: 400ms;
     --duration-short: 200ms;
@@ -463,27 +463,60 @@
         content: none;
     }
 
+    /** -----------------------------------------------------------------------------
+     * BUTTON                                                                        
+     * ------------------------------------------------------------------------------- */
+
     button {
         appearance: none;
-        background: none;
+
         border: none;
-        display: block;
-        padding: 0;
+        border-radius: var(--radius-md);
+        cursor: pointer;
+
+        font-size: var(--fontSize-bodyMd);
+        line-height: var(--lineHeight-bodyMd);
+        font-weight: var(--fontWeight-medium);
+        text-align: center;
         text-decoration: none;
-        -webkit-appearance: none;
+        white-space: nowrap;
+
+        color: var(--clr-white);
+        background: var(--clr-btn_default);
+
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: var(--space-2) var(--space-4);
+
+        @media (prefers-reduced-motion: no-preference) {
+            transition: all 0.2s ease-in-out;
+        }
+
+        &[disabled],
+        &[aria-disabled='true'] {
+            &:hover {
+                cursor: not-allowed;
+            }
+
+            opacity: 0.5;
+        }
+
+        &:hover:not(:is([disabled], [aria-disabled='true'])) {
+            background: var(--clr-btn_hover);
+        }
+
+        &:is(:active, [data-active='true']):not(:is([disabled], [aria-disabled='true'])) {
+            background: var(--clr-btn_active);
+        }
+
     }
 
-    button:not([disabled]),
     input[type='button']:not([disabled]) {
         cursor: pointer;
     }
 
-    button[disabled],
-    button[aria-disabled='true'] {
-        opacity: 0.5;
-    }
-
-    button[disabled]:hover,
     button[aria-disabled='true']:hover {
         cursor: not-allowed !important;
     }
@@ -597,10 +630,10 @@
     pre:has(code) {
         background: var(--clr-tint_default);
         border-radius: var(--radius-md);
-        margin-bottom: var(--spacing-space_6);
-        margin-top: var(--spacing-space_6);
+        margin-bottom: var(--space_6);
+        margin-top: var(--space_6);
         overflow: auto;
-        padding: var(--spacing-space_6);
+        padding: var(--space_6);
     }
 
     /** -----------------------------------------------------------------------------
@@ -616,7 +649,7 @@
         display: block;
         font-weight: var(--fontWeight-medium);
         line-height: 1.4;
-        margin-bottom: var(--spacing-space_2);
+        margin-bottom: var(--space_2);
         overflow-wrap: break-word;
     }
 
@@ -654,8 +687,8 @@
         border-bottom: none;
         border-color: var(--clr-border_default) !important;
         border-top: 1px solid;
-        margin-bottom: var(--spacing-space_6);
-        margin-top: var(--spacing-space_6);
+        margin-bottom: var(--space_6);
+        margin-top: var(--space_6);
     }
 
     /** -----------------------------------------------------------------------------
@@ -665,8 +698,8 @@
     input[type=checkbox] {
         accent-color: var(--clr-btn_default);
         cursor: pointer;
-        height: var(--spacing-space_4);
-        width: var(--spacing-space_4);
+        height: var(--space_4);
+        width: var(--space_4);
     }
 
     textarea {
@@ -675,7 +708,7 @@
         border-radius: var(--radius-md);
         color: var(--clr-text_high_contrast);
         font-weight: var(--fontWeight-regular);
-        padding: var(--spacing-space_2) var(--spacing-space_4);
+        padding: var(--space_2) var(--space_4);
     }
 
     textarea[readonly] {
@@ -723,7 +756,7 @@
     ul li,
     ol li {
         list-style-position: inside;
-        margin-bottom: var(--spacing-space_2);
+        margin-bottom: var(--space_2);
     }
 
     ul li::marker,
@@ -751,7 +784,7 @@
     th,
     td {
         font-size: var(--fontSize-bodyMd);
-        padding: var(--spacing-space_2) var(--spacing-space_6);
+        padding: var(--space_2) var(--space_6);
         text-align: left;
         vertical-align: middle;
     }
@@ -780,7 +813,7 @@
     }
 
     p {
-        margin-bottom: var(--spacing-space_2);
+        margin-bottom: var(--space_2);
         overflow-wrap: break-word;
     }
 
@@ -834,21 +867,20 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        font-size: 1rem;
-        font-weight: 500;
-        text-align: center;
-        text-decoration: none;
-        white-space: nowrap;
-        border-radius: 0.25rem;
-        cursor: pointer;
         transition: all 0.2s ease-in-out;
-        padding: 0.5rem 1rem;
 
         /* Primary variant */
         &.primary {
-            background-color: #0070f3;
-            color: #fff;
-            border: none;
+            background-color: var(--clr-btn_default);
+            color: var(--clr-white);
+
+            &:not(:is([disabled], [aria-disabled='true'])):hover {
+                background: var(--clr-btn_hover);
+            }
+
+            &:not(:is([disabled], [aria-disabled='true'])):is(:active, [data-active='true']) {
+                background: var(--clr-btn_active);
+            }
         }
 
         /* Secondary variant */
