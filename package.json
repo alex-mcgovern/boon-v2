@@ -2,6 +2,7 @@
 	"name": "boon-v2",
 	"version": "0.0.0-17",
 	"type": "module",
+	"files": ["components"],
 	"exports": {
 		"./*": "./components/*"
 	},
