@@ -1,4 +1,4 @@
-import * as React from "react";
+import { jsx } from "react/jsx-runtime";
 
 /**
  * @typedef {import('react').ButtonHTMLAttributes<HTMLButtonElement>} ButtonProps
@@ -25,7 +25,7 @@ export function Button(props) {
 		...rest
 	} = props;
 
-	return React.jsx("button", {
+	return jsx("button", {
 		type,
 		children,
 		className: "button",
