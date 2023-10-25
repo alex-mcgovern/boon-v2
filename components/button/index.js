@@ -28,7 +28,7 @@ export function Button(props) {
 	return jsx("button", {
 		type,
 		children,
-		className: "button",
+		className: "btn",
 		...rest,
 	});
 }
