@@ -1,8 +1,10 @@
 {
 	"name": "boon-v2",
-	"version": "0.0.0-21",
+	"version": "0.0.0-22",
 	"type": "module",
-	"files": ["src"],
+	"files": [
+		"src"
+	],
 	"exports": {
 		"./*": "./src/*"
 	},
