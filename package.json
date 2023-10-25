@@ -2,13 +2,9 @@
 	"name": "boon-v2",
 	"version": "0.0.0-21",
 	"type": "module",
-	"module": "components/index.js",
-	"files": [
-		"components"
-	],
+	"files": ["src"],
 	"exports": {
-		"./style.css": "./components/style.css",
-		"./*": "./components/*"
+		"./*": "./src/*"
 	},
 	"scripts": {
 		"build-storybook": "storybook build",
