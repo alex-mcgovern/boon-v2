@@ -1,6 +1,7 @@
 // @ts-check
 
-import * as React from "react";
+// @ts-ignore
+import { jsx } from "react";
 
 /**
  * A customizable button component that can render a left and/or right slot beside its children.
@@ -20,9 +21,10 @@ export function Button(props) {
 		.filter(Boolean)
 		.join(" ");
 
-	return (
-		<button className={cn} type={type} {...rest}>
-			{children}
-		</button>
-	);
+	return jsx("button", {
+		type,
+		children,
+		className: cn,
+		...rest,
+	});
 }
