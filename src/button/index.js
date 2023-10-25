@@ -1,7 +1,7 @@
 // @ts-check
 
 // @ts-ignore
-import { jsx } from "react";
+import { jsx } from "react/jsx-runtime";
 
 /**
  * A customizable button component that can render a left and/or right slot beside its children.
