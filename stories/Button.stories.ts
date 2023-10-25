@@ -1,9 +1,12 @@
-import { Button } from "../components/button/Button";
+import { Button } from "../components/button";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
 	title: "Components/Button",
 	component: Button,
+	args: {
+		children: "Button",
+	},
 	parameters: {
 		// Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
 		layout: "centered",
@@ -29,12 +32,41 @@ export const Secondary = {
 		children: "Button",
 	},
 };
-export const Danger = {
+
+/** -----------------------------------------------------------------------------
+ * COLOR OVERLAY
+ * ------------------------------------------------------------------------------- */
+
+export const ColorOverlayRed = {
 	args: {
-		variant: "danger",
-		children: "Button",
+		colorOverlay: "red",
 	},
 };
+export const ColorOverlayBlue = {
+	args: {
+		colorOverlay: "blue",
+	},
+};
+export const ColorOverlayGreen = {
+	args: {
+		colorOverlay: "green",
+	},
+};
+export const ColorOverlayGrey = {
+	args: {
+		colorOverlay: "grey",
+	},
+};
+export const ColorOverlayAmber = {
+	args: {
+		colorOverlay: "amber",
+	},
+};
+
+/** -----------------------------------------------------------------------------
+ * SIZE
+ * ------------------------------------------------------------------------------- */
+
 export const Small = {
 	args: {
 		size: "small",
