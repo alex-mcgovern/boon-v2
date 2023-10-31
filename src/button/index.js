@@ -2,7 +2,6 @@
 
 // @ts-expect-error
 import { jsx } from "react/jsx-runtime";
-import "./button.css";
 
 /**
  * A customizable button component that can render a left and/or right slot beside its children.
