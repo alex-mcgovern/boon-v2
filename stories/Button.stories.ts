@@ -43,27 +43,27 @@ export const Ghost = {
  * COLOR OVERLAY
  * ------------------------------------------------------------------------------- */
 
-export const ColorOverlayRed = {
+export const ThemeRed = {
 	args: {
 		theme: "red",
 	},
 };
-export const ColorOverlayBlue = {
+export const ThemeBlue = {
 	args: {
 		theme: "blue",
 	},
 };
-export const ColorOverlayGreen = {
+export const ThemeGreen = {
 	args: {
 		theme: "green",
 	},
 };
-export const ColorOverlayGrey = {
+export const ThemeGrey = {
 	args: {
 		theme: "grey",
 	},
 };
-export const ColorOverlayAmber = {
+export const ThemeAmber = {
 	args: {
 		theme: "amber",
 	},
@@ -89,5 +89,16 @@ export const Square = {
 	args: {
 		size: "square",
 		children: "⌘",
+	},
+};
+
+/** -----------------------------------------------------------------------------
+ * SIZE
+ * ------------------------------------------------------------------------------- */
+
+export const Disabled = {
+	args: {
+		disabled: true,
+		children: "Button",
 	},
 };
