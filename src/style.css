@@ -203,6 +203,7 @@
 }
 
 @layer theme {
+
     .theme__amber {
         --clr-backdrop: #ab6400;
         --clr-background: #fefdfb;
@@ -472,7 +473,127 @@
      * BUTTON                                                                        
      * ------------------------------------------------------------------------------- */
 
+    button,
+    input[type='button'] {
+        appearance: none;
 
+        border: none;
+        border-radius: var(--radius-md);
+        cursor: pointer;
+
+        font-size: var(--fontSize-bodyMd);
+        line-height: var(--lineHeight-bodyMd);
+        font-weight: var(--fontWeight-medium);
+        text-align: center;
+        text-decoration: none;
+        white-space: nowrap;
+
+        color: var(--clr-white);
+        background: var(--clr-btn_default);
+
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+
+        padding: var(--space_2) var(--space_4);
+
+        @media (prefers-reduced-motion: no-preference) {
+            transition: all 0.2s ease-in-out;
+        }
+
+        &[disabled],
+        &[aria-disabled=true] {
+            &:hover {
+                cursor: not-allowed;
+            }
+
+            opacity: 0.5;
+        }
+
+        &:hover:not(:is([disabled], [aria-disabled='true'])) {
+            background: var(--clr-btn_hover);
+        }
+
+        &:is(:active, [data-active='true']):not(:is([disabled], [aria-disabled='true'])) {
+            background: var(--clr-btn_active);
+        }
+
+        /** ---------------------------------------------
+         * BUTTON ALIGNMENT                                      
+         * ----------------------------------------------- */
+
+
+        &.center {
+            justify-content: "center";
+            text-align: "center";
+        }
+
+        &.left {
+            justify-content: "start";
+            text-align: "left";
+        }
+
+
+        /** ---------------------------------------------
+         * BUTTON SIZES                                      
+         * ----------------------------------------------- */
+
+        &.sm {
+            height: var(--space_8);
+            padding: var(--space_2) var(--space_1);
+        }
+
+        &.lg {
+            height: var(--space_12);
+            padding: var(--space_3) var(--space_6);
+        }
+
+        &.square {
+            aspect-ratio: 1 / 1;
+            height: var(--space_10);
+            width: var(--space_10);
+        }
+
+        /** ---------------------------------------------
+         * BUTTON VARIANTS                                      
+         * ----------------------------------------------- */
+
+        &.secondary {
+            background: var(--clr-white);
+            color: var(--clr-text_high_contrast);
+            border: 1px solid var(--clr-border_default);
+
+
+            &:not(:is([disabled], [aria-disabled='true'])):hover {
+                background: var(--clr-tint_hover);
+                border-color: var(--clr-border_hover);
+            }
+
+            &:not(:is([disabled], [aria-disabled='true'])):is(:active, [data-active='true']) {
+                background: var(--clr-tint_active);
+                border-color: var(--clr-border_active);
+            }
+        }
+
+        &.ghost {
+            background: transparent;
+            color: var(--clr-text_high_contrast);
+            border: none;
+
+
+            &:not(:is([disabled], [aria-disabled='true'])):hover {
+                background: var(--clr-tint_hover);
+                border-color: var(--clr-border_hover);
+            }
+
+            &:not(:is([disabled], [aria-disabled='true'])):is(:active, [data-active='true']) {
+                background: var(--clr-tint_active);
+                border-color: var(--clr-border_active);
+            }
+        }
+
+    }
 
 
     img,
