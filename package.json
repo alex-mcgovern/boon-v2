@@ -2,11 +2,13 @@
 	"name": "boon-v2",
 	"version": "0.0.0-33",
 	"type": "module",
-	"files": [
-		"src"
-	],
+	"files": ["src"],
 	"exports": {
-		"./*": "./src/*"
+		"./*": {
+			"import": "./src/*",
+			"require": "./src/*",
+			"types": "./src/index.d.ts"
+		}
 	},
 	"scripts": {
 		"build-storybook": "storybook build",
