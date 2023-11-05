@@ -2,9 +2,8 @@
 	"name": "boon-v2",
 	"version": "0.0.0-34",
 	"type": "module",
-	"files": [
-		"src"
-	],
+	"files": ["src"],
+	"types": "src/index.d.ts",
 	"exports": {
 		"./*": {
 			"import": "./src/*",
