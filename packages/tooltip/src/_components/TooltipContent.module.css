@@ -1,0 +1,19 @@
+.tooltipText {
+	background: var(--clr-black);
+	color: var(--clr-white);
+
+	font-size: var(--fontSize-bodyMd);
+	font-weight: var(--fontWeight-regular);
+	line-height: var(--lineHeight-bodyMd);
+	text-align: center;
+	white-space: nowrap;
+
+
+	border-radius: var(--radius-md);
+	padding: var(--space_2);
+	max-width: 12rem;
+	overflow: hidden;
+	width: max-content;
+
+	z-index: 1000;
+}

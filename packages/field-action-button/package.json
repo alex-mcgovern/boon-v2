@@ -1,8 +1,8 @@
 {
 	"----------- META -----------": "",
-	"name": "@boondoggle.design/button",
+	"name": "@boondoggle.design/field-action-button",
 	"version": "0.0.0-11",
-	"description": "Button component from Boondoggle component library.",
+	"description": "`FieldActionButton` component from Boondoggle component library.",
 	"author": "",
 	"license": "ISC",
 	"----------- EXPORT -----------": "",
@@ -33,7 +33,7 @@
 	"dependencies": {
 		"clsx": "^2.0.0",
 		"react": "18.2.0",
-		"@boondoggle.design/types": "^0.0.0-11",
+		"@boondoggle.design/tooltip": "^0.0.0-11",
 		"react-dom": "18.2.0"
 	}
 }

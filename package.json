@@ -2,9 +2,7 @@
 	"name": "boon-v2",
 	"version": "0.0.0-36",
 	"type": "module",
-	"files": [
-		"src"
-	],
+	"files": ["src"],
 	"types": "src/index.d.ts",
 	"exports": {
 		"./*": {
@@ -22,6 +20,10 @@
 		"test": ""
 	},
 	"dependencies": {
+		"@fortawesome/fontawesome-svg-core": "6.4.0",
+		"@fortawesome/pro-solid-svg-icons": "6.4.0",
+		"@fortawesome/pro-duotone-svg-icons": "6.4.0",
+		"@fortawesome/react-fontawesome": "0.2.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},
@@ -44,7 +46,5 @@
 		"typescript-plugin-css-modules": "^5.0.2",
 		"vite": "^4.4.5"
 	},
-	"workspaces": [
-		"packages/*"
-	]
+	"workspaces": ["packages/*"]
 }

@@ -1,11 +1,11 @@
-import clsx from "clsx";
-import * as React from "react";
-import { getSlotWrapperStyles } from "../styles.css";
 import {
 	WithSize,
 	WithSlots,
 	WithStateDisabled,
 } from "@boondoggle.design/types";
+import clsx from "clsx";
+import * as React from "react";
+import styles from "./InputSlotWrapper.module.css";
 
 /**
  * Renders a wrapper around the input and its slots.
@@ -44,11 +44,6 @@ export const InputSlotWrapper = React.forwardRef<
 			 * Method to call the input elements onClick handler.
 			 */
 			onClick: React.MouseEventHandler<HTMLInputElement> | undefined;
-
-			/**
-			 * The size of the input.
-			 */
-			size: ElementSizeEnum | undefined;
 		}
 >(
 	(
@@ -80,14 +75,17 @@ export const InputSlotWrapper = React.forwardRef<
 			<div
 				aria-disabled={disabled}
 				className={clsx(
-					getSlotWrapperStyles({
-						hasBorder,
-						hasSlotLeft: !!slotLeft,
-						hasSlotRight: !!slotRight,
-						size,
-					}),
+					styles.slotWrapper,
+
 					className,
+					size,
 					{
+						[styles.sm]: size === "sm",
+						[styles.md]: size === "md",
+						[styles.lg]: size === "lg",
+						[styles.hasSlotLeft]: !!slotLeft,
+						[styles.hasSlotRight]: !!slotRight,
+						// [styles.hasBorder]: hasBorder,
 						a11yError: invalid,
 					},
 				)}

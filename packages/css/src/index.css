@@ -40,6 +40,7 @@
 @layer reset;
 @layer base;
 @layer theme;
+@layer element-sizing;
 @layer sprinkles;
 
 /** -----------------------------------------------------------------------------
@@ -169,7 +170,21 @@
     --width-main_sm: 30rem;
     --width-max-content: max-content;
     --width-min-content: min-content;
+
+    --element-height-lg: 3rem;
+    --element-height-md: 2.5rem;
+    --element-height-sm: 2rem;
+
+    --element-padding-lg-x: 1.5rem;
+    --element-padding-lg-y: 0.75rem;
+
+    --element-padding-md-x: 1rem;
+    --element-padding-md-y: 0.5rem;
+
+    --element-padding-sm-x: 0.5rem;
+    --element-padding-sm-y: 0.25rem;
 }
+
 
 .a11yError {
     border-color: var(--clr-btn_default);
@@ -318,7 +333,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
     .animateFadeIn {
-        animation: fadeInKeyframes var(--duration-short) ease forwards;
+        animation: fadeInKeyframes var(--duration-long) ease forwards;
     }
 
     .slideUp {
@@ -544,6 +559,30 @@
         outline-offset: -2px;
     }
 
+
+    /** -----------------------------------------------------------------------------
+    * BUTTONS                                                                       
+    * ------------------------------------------------------------------------------- */
+
+    button {
+        appearance: none;
+        background: none;
+        border: none;
+        display: block;
+        padding: 0;
+        text-decoration: none;
+    }
+
+    button[disabled],
+    button[aria-disabled=true] {
+        opacity: 0.5;
+    }
+
+    button[disabled]:hover,
+    button[aria-disabled=true]:hover {
+        cursor: not-allowed !important;
+    }
+
     /** -----------------------------------------------------------------------------
      * CODE                                                                          
      * ------------------------------------------------------------------------------- */
@@ -639,7 +678,7 @@
         padding: var(--space_2) var(--space_4);
 
         @media (prefers-reduced-motion: no-preference) {
-            transition: all 0.2s ease-in-out;
+            transition: all var(--duration-medium) ease;
         }
 
         &:focus:not(:focus-visible) {

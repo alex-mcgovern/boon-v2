@@ -1,0 +1,24 @@
+.fieldActionButtonBase {
+    border-radius: var(--radius-sm);
+    color: var(--clr-text_low_contrast);
+    pointer-events: all;
+
+    &:hover {
+        color: var(--clr-text_high_contrast);
+
+        @media (prefers-reduced-motion: no-preference) {
+            transition: all var(--duration-short) ease;
+        }
+    }
+
+    &:focus {
+        color: var(--clr-text_high_contrast);
+        outline: 0;
+    }
+
+    &:focus-visible:not(:is([disabled], [aria-disabled='true'])) {
+        border-color: var(--clr-btn_default);
+        outline: 2px solid var(--clr-focus_ring);
+        outline-offset: -2px,
+    }
+}

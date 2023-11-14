@@ -3,15 +3,15 @@
  */
 import { render } from "@testing-library/react";
 
-import { Input } from "..";
 import { LOREM } from "../../../../mocks/LOREM.mock";
 import "../../../../test/mocked_dependencies/dialog.mock";
+import { Input } from "../_components/Input";
 
-import type { InputProps } from "..";
 import {
 	a11yError,
 	variantColorOverlay,
 } from "../../../../packages/styles/src/index.css";
+import type { InputProps } from "../_components/Input";
 
 const PROPS: InputProps = {
 	name: LOREM.name(),

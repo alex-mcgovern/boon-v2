@@ -1,7 +1,7 @@
-import { InputAddonTab } from "./InputAddonTab";
 import { WithSize } from "@boondoggle.design/types";
 import clsx from "clsx";
-import styles from "../input.module.css";
+import { InputAddonTab } from "./InputAddonTab";
+import styles from "./InputAddonWrapper.module.css";
 
 export type WithOptionalInputAddons = {
 	/**

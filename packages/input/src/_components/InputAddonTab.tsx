@@ -1,6 +1,7 @@
-import * as React from "react";
-import { getInputAddonTabStyle } from "../styles.css";
 import { WithSize } from "@boondoggle.design/types";
+import clsx from "clsx";
+import * as React from "react";
+import styles from "./InputAddonTab.module.css";
 
 export function InputAddonTab({
 	children,
@@ -10,29 +11,29 @@ export function InputAddonTab({
 	children: React.ReactNode;
 	side: "right" | "left";
 }) {
-	if (React.isValidElement(children)) {
+	const cn = clsx(styles.inputAddonTab, styles.hasBorder, {
+		[styles.sm]: size === "sm",
+		[styles.md]: size === "md",
+		[styles.lg]: size === "lg",
+		[styles.sideLeft]: side === "left",
+		[styles.sideRight]: side === "right",
+	});
+
+	if (React.isValidElement<React.HtmlHTMLAttributes<HTMLElement>>(children)) {
 		return (
-			<div
-				className={getInputAddonTabStyle({
-					hasBorder: false,
-					side,
-					size,
+			<div className={cn}>
+				{/* {children} */}
+				{React.cloneElement(children, {
+					// className: clsx(
+					// 	children.props.className,
+					// 	styles.overrideTabBorder,
+					// ),
+					style: {
+						border: 0,
+					},
 				})}
-			>
-				{children}
 			</div>
 		);
 	}
-	return (
-		<div
-			className={getInputAddonTabStyle({
-				hasBorder: true,
-				padding: size,
-				side,
-				size,
-			})}
-		>
-			{children}
-		</div>
-	);
+	return <div className={clsx(cn, styles.hasPadding)}>{children}</div>;
 }

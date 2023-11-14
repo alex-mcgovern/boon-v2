@@ -1,6 +1,7 @@
 /** -----------------------------------------------------------------------------
  * THEME
  * ------------------------------------------------------------------------------- */
+
 export type Theme = "blue" | "green" | "red" | "default" | "amber";
 
 export type WithTheme = {
@@ -21,8 +22,66 @@ export type WithDescription = {
 	description?: React.ReactNode;
 };
 
+export type WithName = {
+	/**
+	 * Unique name for the element.
+	 * @important Should be a *snake_case* string.
+	 * @important This will be used as the HTML element ID.
+	 */
+	name: string;
+};
+
 /** -----------------------------------------------------------------------------
- * COPY FUNCTIONALITY
+ * FIELD FUNCTIONALITY: CLEARABLE
+ * ------------------------------------------------------------------------------- */
+
+type BaseIsClearable = {
+	/**
+	 * Whether the input is clearable or not.
+	 */
+	isClearable?: boolean;
+
+	/**
+	 * Whether the input is read-only or not.
+	 */
+	readOnly?: boolean;
+
+	/**
+	 * The tooltip text to display when the button is hovered.
+	 */
+	strClear?: string;
+};
+
+type IsClearable = BaseIsClearable & {
+	isClearable: true;
+	readOnly?: never;
+	strClear: string;
+};
+
+type IsNotClearable = BaseIsClearable & {
+	isClearable?: never;
+	readOnly?: boolean;
+	strClear?: never;
+};
+
+export type WithOptionalIsClearable = IsClearable | IsNotClearable;
+
+/**
+ * Validates that the correct required props are present to label
+ * an element and forwards them to a component.
+ */
+export const getOptionalIsClearableProps = ({
+	isClearable,
+	readOnly,
+	strClear,
+}: BaseIsClearable): WithOptionalIsClearable => {
+	return !readOnly && isClearable && strClear
+		? { isClearable, readOnly: undefined, strClear }
+		: { isClearable: undefined, readOnly, strClear: undefined };
+};
+
+/** -----------------------------------------------------------------------------
+ * FIELD FUNCTIONALITY: COPY
  * ------------------------------------------------------------------------------- */
 
 type BaseIsCopyable = {
@@ -80,7 +139,7 @@ export const getOptionalIsCopyableProps = ({
 };
 
 /** -----------------------------------------------------------------------------
- * TOGGLE VISIBILITY FUNCTIONALITY
+ * FIELD FUNCTIONALITY: TOGGLE VISIBILITY
  * ------------------------------------------------------------------------------- */
 
 type BaseIsVisibilityToggleable = {
