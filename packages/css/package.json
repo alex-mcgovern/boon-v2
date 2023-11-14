@@ -15,12 +15,11 @@
 			"require": "./dist/index.css"
 		}
 	},
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"——————————— SCRIPTS ———————————": "",
 	"scripts": {
-		"build": "tsc && tsup && biome check --apply-unsafe .",
+		"build": "tsup",
+		"postbuild": "biome check --apply-unsafe .",
 		"postversion": "git push && git push --tags && npm publish --access public",
 		"preversion": "npm run build",
 		"test": "test"

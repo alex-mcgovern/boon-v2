@@ -288,27 +288,6 @@
         --clr-white: #fbfefc;
     }
 
-    .theme__grey {
-        --clr-backdrop: #c40006d3;
-        --clr-background: #fffcfc;
-        --clr-black: #641723;
-        --clr-border_active: #e5484d;
-        --clr-border_default: #f4a9aa;
-        --clr-border_hover: #eb8e90;
-        --clr-btn_active: #ce2c31;
-        --clr-btn_default: #e5484d;
-        --clr-btn_hover: #dc3e42;
-        --clr-btn_tint: #ffcdce;
-        --clr-focus_ring: #eb8e90;
-        --clr-shadow: #ff000632;
-        --clr-text_high_contrast: #ce2c31;
-        --clr-text_low_contrast: #ce2c31;
-        --clr-tint_active: #ffcdce;
-        --clr-tint_default: #feebec;
-        --clr-tint_hover: #ffdbdc;
-        --clr-white: #fffcfc;
-    }
-
     .theme__red {
         --clr-backdrop: #c40006d3;
         --clr-background: #fffcfc;

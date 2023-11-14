@@ -8,7 +8,7 @@
 		"rules": {
 			"recommended": true
 		},
-		"ignore": ["docs", "build", "storybook-static"]
+		"ignore": ["docs", "build", "dist", "storybook-static"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -16,6 +16,6 @@
 		"indentStyle": "tab",
 		"indentWidth": 4,
 		"lineWidth": 80,
-		"ignore": ["docs", "build",  "storybook-static"]
+		"ignore": ["docs", "build", "storybook-static"]
 	}
 }

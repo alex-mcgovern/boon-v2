@@ -1,8 +1,8 @@
 {
 	"----------- META -----------": "",
-	"name": "@boondoggle.design/button",
+	"name": "@boondoggle.design/types",
 	"version": "0.0.0-11",
-	"description": "Button component from Boondoggle component library.",
+	"description": "Types & type utils for Boondoggle component library.",
 	"author": "",
 	"license": "ISC",
 	"----------- EXPORT -----------": "",
@@ -13,10 +13,6 @@
 		".": {
 			"import": "./dist/index.js",
 			"require": "./dist/index.js"
-		},
-		"./css": {
-			"import": "./dist/index.css",
-			"require": "./dist/index.css"
 		}
 	},
 	"types": "./dist/index.d.ts",
@@ -31,8 +27,6 @@
 	},
 	"----------- DEPENDENCIES -----------": "",
 	"dependencies": {
-		"clsx": "^2.0.0",
-		"react": "18.2.0",
-		"react-dom": "18.2.0"
+		"react": "18.2.0"
 	}
 }

@@ -1,21 +1,25 @@
 .boonButton {
-    appearance: none;
-    border: none;
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    font-size: var(--fontSize-bodyMd);
-    line-height: var(--lineHeight-bodyMd);
-    font-weight: var(--fontWeight-medium);
-    text-align: center;
-    text-decoration: none;
-    white-space: nowrap;
-    color: var(--clr-white);
-    background: var(--clr-btn_default);
     display: inline-flex;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
+
+    background: var(--clr-btn_default);
+    color: var(--clr-white);
+    border: none;
+    border-radius: var(--radius-md);
     padding: var(--space_2) var(--space_4);
+    appearance: none;
+
+    font-size: var(--fontSize-bodyMd);
+    line-height: var(--lineHeight-bodyMd);
+    font-weight: var(--fontWeight-medium);
+
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+
+    cursor: pointer;
 
     @media (prefers-reduced-motion: no-preference) {
         transition: all 0.2s ease-in-out;
@@ -60,7 +64,7 @@
 
     &.sm {
         height: var(--space_8);
-        padding: var(--space_2) var(--space_1);
+        padding: var(--space_1) var(--space_2);
     }
 
     &.lg {
@@ -72,6 +76,7 @@
         aspect-ratio: 1 / 1;
         height: var(--space_10);
         width: var(--space_10);
+        padding: var(--space_2);
     }
 
     /** ---------------------------------------------

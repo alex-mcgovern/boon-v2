@@ -1,6 +1,5 @@
-import { Button } from "../src/button";
+import { Button } from "../packages/button/src/index";
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
 	title: "Components/Button",
 	component: Button,
@@ -8,18 +7,14 @@ export default {
 		children: "Button",
 	},
 	parameters: {
-		// Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
-		layout: "centered",
+		// layout: "centered",
 	},
-	// This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
 	tags: ["autodocs"],
-	// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 	argTypes: {
 		backgroundColor: { control: "color" },
 	},
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary = {
 	args: {
 		variant: "primary",
@@ -58,11 +53,6 @@ export const ThemeGreen = {
 		theme: "green",
 	},
 };
-export const ThemeGrey = {
-	args: {
-		theme: "grey",
-	},
-};
 export const ThemeAmber = {
 	args: {
 		theme: "amber",
@@ -87,7 +77,7 @@ export const Large = {
 };
 export const Square = {
 	args: {
-		size: "square",
+		size: "sq",
 		children: "⌘",
 	},
 };

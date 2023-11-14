@@ -17,5 +17,5 @@
           "plugins": [{ "name": "typescript-plugin-css-modules" }]
 
       },
-      "include": ["packages", "types"]
+      "include": ["packages", "types", "stories"]
   }
