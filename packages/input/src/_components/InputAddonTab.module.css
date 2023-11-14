@@ -1,0 +1,84 @@
+.inputAddonTab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space_2);
+
+    font-size: var(--fontSize-bodyMd);
+    line-height: var(--lineHeight-bodyMd);
+    font-weight: var(--fontWeight-medium);
+
+    background: var(--clr-tint_default);
+    color: var(--clr-text_low_contrast);
+
+    &:has(:focus-visible) {
+        border-color: var(--clr-btn_default);
+        outline: 2px solid var(--clr-focus_ring);
+        outline-offset: -2px,
+    }
+
+    &.sm {
+        &.hasPadding {
+            padding: var(--element-padding-sm-y) var(--element-padding-sm-x);
+        }
+
+        height: var(--element-height-sm);
+        min-width: var(--element-height-sm);
+    }
+
+    &.md {
+        &.hasPadding {
+            padding: var(--element-padding-md-y) var(--element-padding-md-x);
+        }
+
+        height: var(--element-height-md);
+        min-width: var(--element-height-md);
+    }
+
+    &.lg {
+        &.hasPadding {
+            padding: var(--element-padding-lg-y) var(--element-padding-lg-x);
+        }
+
+        height: var(--element-height-lg);
+        min-width: var(--element-height-lg);
+    }
+
+    &.sideLeft {
+        border-bottom-left-radius: var(--radius-md);
+        border-top-left-radius: var(--radius-md);
+
+        >button,
+        >input {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        &.hasBorder {
+            border-top: 1px solid var(--clr-border_default);
+            border-bottom: 1px solid var(--clr-border_default);
+            border-left: 1px solid var(--clr-border_default);
+        }
+    }
+
+    &.sideRight {
+        border-bottom-right-radius: var(--radius-md);
+        border-top-right-radius: var(--radius-md);
+
+        >button,
+        >input {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        &.hasBorder {
+            border-top: 1px solid var(--clr-border_default);
+            border-bottom: 1px solid var(--clr-border_default);
+            border-right: 1px solid var(--clr-border_default);
+        }
+    }
+}
+
+.overrideTabBorder {
+    border: 0 !important;
+}

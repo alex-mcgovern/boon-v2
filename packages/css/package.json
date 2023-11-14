@@ -1,0 +1,27 @@
+{
+	"——————————— META ———————————": "",
+	"name": "@boondoggle.design/css",
+	"version": "0.0.0-11",
+	"description": "CSS from Boondoggle component library.",
+	"author": "",
+	"license": "ISC",
+	"——————————— EXPORTS ———————————": "",
+	"type": "module",
+	"main": "./dist/index.css",
+	"module": "./dist/index.css",
+	"exports": {
+		".": {
+			"import": "./dist/index.css",
+			"require": "./dist/index.css"
+		}
+	},
+	"files": ["dist"],
+	"——————————— SCRIPTS ———————————": "",
+	"scripts": {
+		"build": "tsup",
+		"postbuild": "biome check --apply-unsafe .",
+		"postversion": "git push && git push --tags && npm publish --access public",
+		"preversion": "npm run build",
+		"test": "test"
+	}
+}

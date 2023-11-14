@@ -1,0 +1,27 @@
+.inputAddonWrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .inputAddonChildren {
+        flex: 1 0;
+    }
+
+    &.hasAddonLeft {
+        .inputAddonChildren {
+            >div {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+    }
+
+    &.hasAddonRight {
+        .inputAddonChildren {
+            >div {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+    }
+}

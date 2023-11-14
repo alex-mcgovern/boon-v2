@@ -1,0 +1,40 @@
+{
+	"----------- META -----------": "",
+	"name": "@boondoggle.design/input",
+	"version": "0.0.0-11",
+	"description": "Input component from Boondoggle component library.",
+	"author": "",
+	"license": "ISC",
+	"----------- EXPORT -----------": "",
+	"type": "module",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.js"
+		},
+		"./css": {
+			"import": "./dist/index.css",
+			"require": "./dist/index.css"
+		}
+	},
+	"types": "./dist/index.d.ts",
+	"files": ["dist"],
+	"----------- SCRIPTS -----------": "",
+	"scripts": {
+		"build": "tsup",
+		"postbuild": "biome check --apply-unsafe .",
+		"postversion": "git push && git push --tags && npm publish --access public",
+		"preversion": "npm run build",
+		"test": "test"
+	},
+	"----------- DEPENDENCIES -----------": "",
+	"dependencies": {
+		"clsx": "^2.0.0",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"@boondoggle.design/types": "^0.0.0-11",
+		"@boondoggle.design/utils": "^0.0.0-11"
+	}
+}

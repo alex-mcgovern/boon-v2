@@ -1,0 +1,31 @@
+/**
+ * @jest-environment jsdom
+ */
+import { render } from "@testing-library/react";
+
+import { LOREM } from "../../../../mocks/LOREM.mock";
+import "../../../../test/mocked_dependencies/dialog.mock";
+import { Input } from "../_components/Input";
+
+import type { InputProps } from "../_components/Input";
+
+const PROPS: InputProps = {
+	name: LOREM.name(),
+	placeholder: LOREM.placeholder(),
+};
+
+const renderComponent = ({ ...props }: InputProps) => {
+	return render(<Input {...props} />);
+};
+
+describe("<Input />", () => {
+	test("should render placeholder", () => {
+		const { getByRole } = renderComponent(PROPS);
+
+		const textbox = getByRole("textbox");
+
+		expect((textbox as HTMLInputElement).placeholder).toBe(
+			PROPS.placeholder,
+		);
+	});
+});

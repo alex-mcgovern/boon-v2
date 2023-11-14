@@ -1,0 +1,42 @@
+{
+	"----------- META -----------": "",
+	"name": "@boondoggle.design/icon",
+	"version": "0.0.0-11",
+	"description": "Icon component from Boondoggle component library.",
+	"author": "",
+	"license": "ISC",
+	"----------- EXPORT -----------": "",
+	"type": "module",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.js"
+		},
+		"./css": {
+			"import": "./dist/index.css",
+			"require": "./dist/index.css"
+		}
+	},
+	"types": "./dist/index.d.ts",
+	"files": ["dist"],
+	"----------- SCRIPTS -----------": "",
+	"scripts": {
+		"build": "tsup",
+		"postbuild": "biome check --apply-unsafe .",
+		"postversion": "git push && git push --tags && npm publish --access public",
+		"preversion": "npm run build",
+		"test": "test"
+	},
+	"----------- DEPENDENCIES -----------": "",
+	"dependencies": {
+		"@fortawesome/fontawesome-svg-core": "6.4.0",
+		"@fortawesome/pro-duotone-svg-icons": "6.4.0",
+		"@fortawesome/pro-solid-svg-icons": "6.4.0",
+		"@fortawesome/react-fontawesome": "0.2.0",
+		"clsx": "^2.0.0",
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
+	}
+}

@@ -1,0 +1,137 @@
+.boonButton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    background: var(--clr-btn_default);
+    color: var(--clr-white);
+
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+
+    height: var(--element-height-md);
+    padding: var(--element-padding-md-y) var(--element-padding-md-x);
+
+    appearance: none;
+
+    font-size: var(--fontSize-bodyMd);
+    line-height: var(--lineHeight-bodyMd);
+    font-weight: var(--fontWeight-medium);
+
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition: all var(--duration-medium) ease;
+    }
+
+    &[disabled],
+    &[aria-disabled=true] {
+        &:hover {
+            cursor: not-allowed;
+        }
+
+        opacity: 0.5;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    &:focus-visible:not(:is([disabled], [aria-disabled='true'])) {
+        border-color: var(--clr-btn_default);
+        outline: 2px solid var(--clr-focus_ring);
+        outline-offset: -2px,
+    }
+
+    &:hover:not(:is([disabled], [aria-disabled='true'])) {
+        background: var(--clr-btn_hover);
+    }
+
+    &:is(:active, [data-active='true']):not(:is([disabled], [aria-disabled='true'])) {
+        background: var(--clr-btn_active);
+    }
+
+    /** ---------------------------------------------
+    * BUTTON ALIGNMENT                                      
+    * ----------------------------------------------- */
+
+
+    &.center {
+        justify-content: "center";
+        text-align: "center";
+    }
+
+    &.left {
+        justify-content: "start";
+        text-align: "left";
+    }
+
+
+    /** ---------------------------------------------
+    * BUTTON SIZES                                      
+    * ----------------------------------------------- */
+
+    &.sm {
+        height: var(--element-height-sm);
+        padding: var(--element-padding-sm-y) var(--element-padding-sm-x);
+    }
+
+    &.md {
+        height: var(--element-height-md);
+        padding: var(--element-padding-md-y) var(--element-padding-md-x);
+    }
+
+    &.lg {
+        height: var(--element-height-lg);
+        padding: var(--element-padding-lg-y) var(--element-padding-lg-x);
+    }
+
+    &.sq {
+        aspect-ratio: 1 / 1;
+        height: var(--space_10);
+        width: var(--space_10);
+        padding: var(--space_2);
+    }
+
+    /** ---------------------------------------------
+    * BUTTON VARIANTS                                      
+    * ----------------------------------------------- */
+
+    &.secondary {
+        background: var(--clr-white);
+        color: var(--clr-text_high_contrast);
+        border: 1px solid var(--clr-border_default);
+
+
+        &:not(:is([disabled], [aria-disabled='true'])):hover {
+            background: var(--clr-tint_hover);
+            border-color: var(--clr-border_hover);
+        }
+
+        &:not(:is([disabled], [aria-disabled='true'])):is(:active, [data-active='true']) {
+            background: var(--clr-tint_active);
+            border-color: var(--clr-border_active);
+        }
+    }
+
+    &.ghost {
+        background: transparent;
+        color: var(--clr-text_high_contrast);
+        border: 1px solid transparent;
+
+
+        &:not(:is([disabled], [aria-disabled='true'])):hover {
+            background: var(--clr-tint_hover);
+        }
+
+        &:not(:is([disabled], [aria-disabled='true'])):is(:active, [data-active='true']) {
+            background: var(--clr-tint_active);
+        }
+    }
+
+}

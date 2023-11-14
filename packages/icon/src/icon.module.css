@@ -1,0 +1,5 @@
+.icon {
+    @media (prefers-reduced-motion: no-preference) {
+        transition: all var(--duration-medium) ease;
+    }
+}
