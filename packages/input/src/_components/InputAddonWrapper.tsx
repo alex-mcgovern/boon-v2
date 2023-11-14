@@ -1,6 +1,7 @@
 import { InputAddonTab } from "./InputAddonTab";
-import { addonChildrenStyle, getAddonWrapperStyle } from "../styles.css";
 import { WithSize } from "@boondoggle.design/types";
+import clsx from "clsx";
+import styles from "../input.module.css";
 
 export type WithOptionalInputAddons = {
 	/**
@@ -30,9 +31,9 @@ export function InputAddonWrapper({
 	}) {
 	return (
 		<div
-			className={getAddonWrapperStyle({
-				hasAddonLeft: !!addonLeft,
-				hasAddonRight: !!addonRight,
+			className={clsx(styles.inputAddonWrapper, {
+				[styles.hasAddonLeft]: !!addonLeft,
+				[styles.hasAddonRight]: !!addonRight,
 			})}
 		>
 			{addonLeft && (
@@ -41,7 +42,7 @@ export function InputAddonWrapper({
 				</InputAddonTab>
 			)}
 
-			<div className={addonChildrenStyle}>{children}</div>
+			<div className={styles.inputAddonChildren}>{children}</div>
 
 			{addonRight && (
 				<InputAddonTab side="right" size={size}>

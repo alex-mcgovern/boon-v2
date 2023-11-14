@@ -1,0 +1,114 @@
+/** -----------------------------------------------------------------------------
+* INPUT SLOT WRAPPER                                                           
+* ------------------------------------------------------------------------------- */
+
+.slotWrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--space_2);
+
+    color: var(--clr-text_low_contrast);
+    background: var(--clr-background);
+    font-weight: var(--fontWeight_regular);
+
+    border: 1px solid var(--clr-border_default);
+    border-radius: var(--radius_md);
+
+    position: relative;
+    width: 100%;
+    cursor: text;
+
+    &:has(input[readonly]) {
+        background: var(--clr-tint_default)
+    }
+
+    &:hover {
+        border-color: var(--clr-border_hover)
+    }
+
+    &:active {
+        border-color: var(--clr-border_active)
+    }
+
+    &:has(input:focus-visible) {
+        border-color: var(--clr-btn_default);
+        outline: 2px solid var(--clr-focus_ring);
+        outline-offset: -2px,
+    }
+}
+
+/** -----------------------------------------------------------------------------
+* INPUT ADDON WRAPPER                                                           
+* ------------------------------------------------------------------------------- */
+
+.inputAddonWrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .inputAddonChildren {
+        flex: 1 0;
+    }
+
+    &.hasAddonLeft {
+        .inputAddonChildren {
+            .slotWrapper {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+    }
+
+    &.hasAddonRight {
+        .inputAddonChildren {
+            .slotWrapper {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+    }
+}
+
+/** -----------------------------------------------------------------------------
+* INPUT ADDON TAB                                                               
+* ------------------------------------------------------------------------------- */
+
+.inputAddonTab {
+    display: flex;
+    align-items: center;
+
+    font-size: var(--fontSize_bodyMd);
+    line-height: var(--lineHeight-bodyMd);
+    font-weight: var(--fontWeight-medium);
+
+    background: var(--clr-tint_default);
+    color: var(--clr-text_low_contrast);
+
+    &:has(:focus-visible) {
+        border-color: var(--clr-btn_default);
+        outline: 2px solid var(--clr-focus_ring);
+        outline-offset: -2px,
+    }
+
+    &.sideLeft {
+        &.hasBorder {
+            border-top: 1px solid var(--clr-border_default);
+            border-bottom: 1px solid var(--clr-border_default);
+            border-left: 1px solid var(--clr-border_default);
+
+            border-bottom-left-radius: var(--radius_md);
+            border-top-left-radius: var(--radius_md);
+        }
+    }
+
+    &.sideRight {
+        &.hasBorder {
+            border-top: 1px solid var(--clr-border_default);
+            border-bottom: 1px solid var(--clr-border_default);
+            border-right: 1px solid var(--clr-border_default);
+
+            border-bottom-right-radius: var(--radius_md);
+            border-top-right-radius: var(--radius_md);
+        }
+    }
+}

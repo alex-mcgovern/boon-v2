@@ -33,12 +33,13 @@ export const getSlotWrapperStyles = recipe({
 	base: [
 		inputSlotWrapperDoNotRemoveOrYouWillBeFired,
 		utilCss({
+			display: "flex",
 			alignItems: "center",
+
 			background: "background",
 			border: "border_default",
 			borderRadius: "md",
 			color: "text_low_contrast",
-			display: "flex",
 			fontWeight: "normal",
 			gap: "space_2",
 			position: "relative",
@@ -245,10 +246,12 @@ const tabSize = styleVariants({
 export const getInputAddonTabStyle = recipe({
 	base: [
 		utilCss({
+			display: "flex",
 			alignItems: "center",
+
 			background: "tint_default",
 			color: "text_low_contrast",
-			display: "flex",
+
 			fontStyle: "bodyMd",
 			fontWeight: "medium",
 		}),
@@ -308,6 +311,9 @@ const hasAddonRight = styleVariants({
 	true: {},
 });
 
+/**
+ * @migrated
+ */
 export const getAddonWrapperStyle = recipe({
 	base: [
 		utilCss({
@@ -322,6 +328,9 @@ export const getAddonWrapperStyle = recipe({
 	},
 });
 
+/**
+ * @migrated
+ */
 export const addonChildrenStyle = style({
 	flexGrow: 1,
 	flexShrink: 0,
