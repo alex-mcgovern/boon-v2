@@ -14,6 +14,7 @@
 		}
 	},
 	"scripts": {
+		"check": "tsc && biome check",
 		"build-storybook": "storybook build",
 		"postversion": "git push && git push --tags && npm publish --access public",
 		"preview": "vite preview",
@@ -25,8 +26,7 @@
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.3.0",
-		"@radix-ui/colors": "^3.0.0",
+		"@biomejs/biome": "^1.3.3",
 		"@storybook/addon-essentials": "^7.5.1",
 		"@storybook/addon-interactions": "^7.5.1",
 		"@storybook/addon-links": "^7.5.1",
@@ -36,14 +36,14 @@
 		"@storybook/testing-library": "^0.2.2",
 		"@types/react": "^18.2.15",
 		"@types/react-dom": "^18.2.7",
-		"@vanilla-extract/vite-plugin": "^3.9.0",
 		"@vitejs/plugin-react-swc": "^3.3.2",
 		"prop-types": "^15.8.1",
 		"storybook": "^7.5.1",
 		"typescript": "^5.2.2",
 		"typescript-plugin-css-modules": "^5.0.2",
-		"vite": "^4.4.5",
-		"vite-dts": "^1.0.4",
-		"vite-plugin-dts": "^3.6.0"
-	}
+		"vite": "^4.4.5"
+	},
+	"workspaces": [
+		"packages/*"
+	]
 }

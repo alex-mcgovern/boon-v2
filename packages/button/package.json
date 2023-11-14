@@ -1,0 +1,29 @@
+{
+    "author": "",
+    "dependencies": {
+        "clsx": "^2.0.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
+    "description": "Button component from Boondoggle component library.",
+    "devDependencies": {
+        "tsup": "^7.2.0"
+    },
+    "exports": "./dist",
+    "files": [
+        "dist"
+    ],
+    "license": "ISC",
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "name": "@boondoggle.design/button",
+    "scripts": {
+        "build": "tsc && tsup && biome check --apply-unsafe .",
+        "postversion": "git push && git push --tags && npm publish --access public",
+        "preversion": "npm run build",
+        "test": "test"
+    },
+    "type": "module",
+    "types": "./dist/index.d.ts",
+    "version": "0.0.0-6"
+}

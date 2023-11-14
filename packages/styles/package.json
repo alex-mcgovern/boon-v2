@@ -1,0 +1,20 @@
+{
+  "name": "@boondoggle.design/styles",
+  "version": "0.0.0-5",
+  "description": "Styles for Boondoggle component library",
+  "main": "./dist/index.css",
+  "exports": {
+    ".": "./dist/index.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "test",
+    "preversion": "npm run build",
+    "postversion": "git push && git push --tags && npm publish --access public"
+  },
+  "author": "",
+  "license": "ISC"
+}
